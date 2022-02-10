@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace NumberSystemsCalculator
 {
+    /// <summary>
+    /// Class, which translate number from 10 number system to given
+    /// </summary>
     public class TranslatorIntFrom10 : Translator, ITranslatable
     {
         public TranslatorIntFrom10(int notion, string number) : base(notion, number)

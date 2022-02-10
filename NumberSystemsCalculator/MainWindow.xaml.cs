@@ -9,6 +9,9 @@ namespace NumberSystemsCalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Required variables
+        /// </summary>
         private string Number = "";
         private int NotionFrom = 0;
         private int NotionTo = 0;
@@ -31,6 +34,7 @@ namespace NumberSystemsCalculator
                 string NotionFromStr = ComboBoxFrom.Text;
                 string NotionToStr = ComboBoxTo.Text;
 
+                //Checking and handling errors
                 if (CheckErrors())
                 {
                     HandleErrors();
@@ -40,12 +44,7 @@ namespace NumberSystemsCalculator
                 NotionFrom = Convert.ToInt32(NotionFromStr);
                 NotionTo = Convert.ToInt32(NotionToStr);
 
-                if (string.IsNullOrWhiteSpace(Number))
-                {
-                    throw new ArgumentException("Вы не ввели число");
-                }
-
-
+                //Translating
                 if (NotionTo == 10 && NotionFrom != 10)
                 {
                     translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);

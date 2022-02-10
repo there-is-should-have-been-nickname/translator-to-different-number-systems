@@ -1,7 +1,8 @@
-﻿using System;
-
-namespace NumberSystemsCalculator
+﻿namespace NumberSystemsCalculator
 {
+    /// <summary>
+    /// Abstract class which contains notion and number in strings
+    /// </summary>
     public abstract class Translator
     {
         protected int _Notion = 0;

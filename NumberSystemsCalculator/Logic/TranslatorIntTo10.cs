@@ -2,6 +2,9 @@
 
 namespace NumberSystemsCalculator
 {
+    /// <summary>
+    /// Class, which translate number from given number system to 10
+    /// </summary>
     public class TranslatorIntTo10 : Translator, ITranslatable
     {
         public TranslatorIntTo10(int notion, string number) : base(notion, number)
