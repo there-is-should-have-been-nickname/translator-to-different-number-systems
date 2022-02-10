@@ -1,0 +1,55 @@
+﻿<Window x:Class="NumberSystemsCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NumberSystemsCalculator"
+        mc:Ignorable="d"
+        Title="Перевод из одной системы счисления в другую" Height="400" Width="800" Background="#FFD9F0EF">
+    <Grid>
+        <Label Content="Перевод из одной системы счисления в другую" Margin="0,30,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="25" HorizontalAlignment="Center"/>
+        <Label Content="Число:" HorizontalAlignment="Left" Margin="96,104,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="200,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center"/>
+        <Label Content="Из:" HorizontalAlignment="Left" Margin="96,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
+        <Label Content="В:" HorizontalAlignment="Left" Margin="240,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Результат:" HorizontalAlignment="Left" Margin="96,280,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="TextBoxResult" HorizontalAlignment="Left" Height="29" Margin="238,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" IsEnabled="False"/>
+
+        <ComboBox x:Name="ComboBoxFrom" HorizontalAlignment="Left" Margin="150,160,0,0" VerticalAlignment="Top" Width="60" FontFamily="Consolas" FontSize="16" Height="29" ScrollViewer.CanContentScroll="True" MaxDropDownHeight="140" HorizontalContentAlignment="Center">
+            <ComboBoxItem HorizontalContentAlignment="Center">2</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">3</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">4</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">5</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">6</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">7</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">8</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">9</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">10</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">11</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">12</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">13</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">14</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">15</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">16</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="ComboBoxTo" HorizontalAlignment="Left" Margin="300,160,0,0" VerticalAlignment="Top" Width="60" FontFamily="Consolas" FontSize="16" Height="29" ScrollViewer.CanContentScroll="True" MaxDropDownHeight="140" HorizontalContentAlignment="Center">
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="2"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="3"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="4"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="5"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="6"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="7"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="8"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="9"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="10"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="11"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="12"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="13"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="14"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="15"/>
+            <ComboBoxItem HorizontalContentAlignment="Center" Content="16"/>
+        </ComboBox>
+        <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="96,221,0,0" VerticalAlignment="Top" Width="150" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold" Click="ButtonCalculate_Click"/>
+
+    </Grid>
+</Window>
