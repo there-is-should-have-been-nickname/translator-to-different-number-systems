@@ -31,23 +31,63 @@
             <ComboBoxItem HorizontalContentAlignment="Center">14</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">15</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">16</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">17</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">18</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">19</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">20</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">21</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">22</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">23</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">24</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">25</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">26</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">27</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">28</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">29</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">30</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">31</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">32</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">33</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">34</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">35</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">36</ComboBoxItem>
         </ComboBox>
         <ComboBox x:Name="ComboBoxTo" HorizontalAlignment="Left" Margin="300,160,0,0" VerticalAlignment="Top" Width="60" FontFamily="Consolas" FontSize="16" Height="29" ScrollViewer.CanContentScroll="True" MaxDropDownHeight="140" HorizontalContentAlignment="Center">
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="2"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="3"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="4"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="5"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="6"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="7"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="8"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="9"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="10"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="11"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="12"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="13"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="14"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="15"/>
-            <ComboBoxItem HorizontalContentAlignment="Center" Content="16"/>
+            <ComboBoxItem HorizontalContentAlignment="Center">2</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">3</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">4</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">5</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">6</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">7</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">8</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">9</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">10</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">11</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">12</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">13</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">14</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">15</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">16</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">17</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">18</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">19</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">20</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">21</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">22</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">23</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">24</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">25</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">26</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">27</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">28</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">29</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">30</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">31</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">32</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">33</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">34</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">35</ComboBoxItem>
+            <ComboBoxItem HorizontalContentAlignment="Center">36</ComboBoxItem>
         </ComboBox>
         <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="96,221,0,0" VerticalAlignment="Top" Width="150" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold" Click="ButtonCalculate_Click"/>
 
