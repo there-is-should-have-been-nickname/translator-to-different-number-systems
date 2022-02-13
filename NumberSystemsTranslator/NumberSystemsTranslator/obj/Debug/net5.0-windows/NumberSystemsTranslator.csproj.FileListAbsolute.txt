@@ -20,3 +20,6 @@ C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSyst
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\ref\NumberSystemsTranslator.dll
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator.pdb
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator.genruntimeconfig.cache
+C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\bin\Debug\net5.0-windows\Lib.dll
+C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\bin\Debug\net5.0-windows\Lib.pdb
+C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator.csproj.CopyComplete
