@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "NumberSystemsTranslator/1.0.0": {
-        "dependencies": {
-          "Lib": "1.0.0"
-        },
-        "runtime": {
-          "NumberSystemsTranslator.dll": {}
-        }
-      },
       "Lib/1.0.0": {
         "runtime": {
           "Lib.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "NumberSystemsTranslator/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Lib/1.0.0": {
       "type": "project",
       "serviceable": false,

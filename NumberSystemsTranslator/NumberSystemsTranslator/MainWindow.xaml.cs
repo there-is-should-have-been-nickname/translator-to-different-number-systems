@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows;
+using Lib;
 
 namespace NumberSystemsTranslator
 {
@@ -17,8 +18,8 @@ namespace NumberSystemsTranslator
         private int NotionTo = 0;
         private string Result = "";
 
-        //private TranslatorIntTo10 translatorIntTo10;
-        //private TranslatorIntFrom10 translatorIntFrom10;
+        private TranslatorIntTo10 translatorIntTo10;
+        private TranslatorIntFrom10 translatorIntFrom10;
 
         public MainWindow()
         {
@@ -45,23 +46,23 @@ namespace NumberSystemsTranslator
                 NotionTo = Convert.ToInt32(NotionToStr);
 
                 //Translating
-                //if (NotionTo == 10 && NotionFrom != 10)
-                //{
-                //    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
-                //    Result = translatorIntTo10.Translate();
-                //}
-                //else if (NotionFrom == 10 && NotionTo != 10)
-                //{
-                //    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, Number);
-                //    Result = translatorIntFrom10.Translate();
-                //}
-                //else if (NotionTo != 10 && NotionFrom != 10)
-                //{
-                //    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
-                //    string tempInt = translatorIntTo10.Translate();
-                //    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, tempInt);
-                //    Result = translatorIntFrom10.Translate();
-                //}
+                if (NotionTo == 10 && NotionFrom != 10)
+                {
+                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
+                    Result = translatorIntTo10.Translate();
+                }
+                else if (NotionFrom == 10 && NotionTo != 10)
+                {
+                    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, Number);
+                    Result = translatorIntFrom10.Translate();
+                }
+                else if (NotionTo != 10 && NotionFrom != 10)
+                {
+                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
+                    string tempInt = translatorIntTo10.Translate();
+                    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, tempInt);
+                    Result = translatorIntFrom10.Translate();
+                }
 
                 TextBoxResult.Text = Result;
                 //TODO: ошибка, когда в записи есть недопустимые числа

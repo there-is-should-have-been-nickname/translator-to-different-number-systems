@@ -1,33 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {
-      "Lib/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/Lib.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Lib.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.WindowsDesktop.App.WPF"
-        ]
-      }
-    }
+    "net5.0-windows7.0": {}
   },
-  "libraries": {
-    "Lib/1.0.0": {
-      "type": "project",
-      "path": "../Lib/Lib.csproj",
-      "msbuildProject": "../Lib/Lib.csproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": [
-      "Lib >= 1.0.0"
-    ]
+    "net5.0-windows7.0": []
   },
   "packageFolders": {
     "C:\\Users\\ACER\\.nuget\\packages\\": {},
@@ -36,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\NumberSystemsTranslator\\NumberSystemsTranslator.csproj",
-      "projectName": "NumberSystemsTranslator",
-      "projectPath": "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\NumberSystemsTranslator\\NumberSystemsTranslator.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\Lib\\Lib.csproj",
+      "projectName": "Lib",
+      "projectPath": "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\Lib\\Lib.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\NumberSystemsTranslator\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\Lib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -60,11 +38,7 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
-          "projectReferences": {
-            "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\Lib\\Lib.csproj": {
-              "projectPath": "C:\\Users\\ACER\\Desktop\\Projects\\translator-to-different-number-systems\\NumberSystemsTranslator\\Lib\\Lib.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
