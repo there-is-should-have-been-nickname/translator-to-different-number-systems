@@ -41,22 +41,23 @@ namespace NumberSystemsTranslator
                     HandleErrors();
                 }
 
+                Result = Number;
 
                 NotionFrom = Convert.ToInt32(NotionFromStr);
                 NotionTo = Convert.ToInt32(NotionToStr);
 
                 //Translating
-                if (NotionTo == 10 && NotionFrom != 10)
+                if (NotionFrom != NotionTo && NotionTo == 10 && NotionFrom != 10)
                 {
                     translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
                     Result = translatorIntTo10.Translate();
                 }
-                else if (NotionFrom == 10 && NotionTo != 10)
+                else if (NotionFrom != NotionTo && NotionFrom == 10 && NotionTo != 10)
                 {
                     translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, Number);
                     Result = translatorIntFrom10.Translate();
                 }
-                else if (NotionTo != 10 && NotionFrom != 10)
+                else if (NotionFrom != NotionTo && NotionTo != 10 && NotionFrom != 10)
                 {
                     translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
                     string tempInt = translatorIntTo10.Translate();
