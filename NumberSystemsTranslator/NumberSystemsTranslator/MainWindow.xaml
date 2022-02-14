@@ -90,6 +90,7 @@
             <ComboBoxItem HorizontalContentAlignment="Center">36</ComboBoxItem>
         </ComboBox>
         <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="96,221,0,0" VerticalAlignment="Top" Width="150" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold" Click="ButtonCalculate_Click"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="506,118,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
