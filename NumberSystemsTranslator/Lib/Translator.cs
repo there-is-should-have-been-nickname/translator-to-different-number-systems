@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System;
 
 namespace Lib
 {
@@ -19,6 +20,23 @@ namespace Lib
             {
                 NumberDecimalSeparator = "."
             };
+
+            if (!IsCorrectDigits())
+            {
+                throw new Exception(message: "В записи числа присутствуют несоответствующие цифры");
+            }
+        }
+
+        private bool IsCorrectDigits()
+        {
+            for (int i = 0; i < _Number.Length; ++i)
+            {
+                if (Convert.ToInt32(_Number[i]) >= _Notion)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
