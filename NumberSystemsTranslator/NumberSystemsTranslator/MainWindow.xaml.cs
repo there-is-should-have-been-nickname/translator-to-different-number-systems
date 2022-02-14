@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
 using Lib;
@@ -13,24 +14,30 @@ namespace NumberSystemsTranslator
         /// <summary>
         /// Required variables
         /// </summary>
-        private string Number = "";
+        private string NumberEntire = "";
+        private string NumberFractional = "";
         private int NotionFrom = 0;
         private int NotionTo = 0;
         private string Result = "";
 
         private TranslatorIntTo10 translatorIntTo10;
         private TranslatorIntFrom10 translatorIntFrom10;
+        private TranslatorFloatTo10 translatorFloatTo10;
+        private TranslatorFloatFrom10 translatorFloatFrom10;
+
+        private NumberFormatInfo Provider = new NumberFormatInfo();
 
         public MainWindow()
         {
             InitializeComponent();
+            Provider.NumberDecimalSeparator = ".";
         }
 
         private void ButtonCalculate_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                Number = TextBoxNumber.Text;
+                NumberEntire = TextBoxNumber.Text;
 
                 string NotionFromStr = ComboBoxFrom.Text;
                 string NotionToStr = ComboBoxTo.Text;
@@ -41,28 +48,47 @@ namespace NumberSystemsTranslator
                     ThrowError(GetErrorMessage());
                 }
 
-                Result = Number;
+                Result = NumberEntire;
 
                 NotionFrom = Convert.ToInt32(NotionFromStr);
                 NotionTo = Convert.ToInt32(NotionToStr);
+                
+                NumberFractional = "0." + NumberEntire.Split(".")[1];
+                NumberEntire = NumberEntire.Split(".")[0];
+
+                
 
                 //Translating
                 if (NotionFrom != NotionTo && NotionTo == 10 && NotionFrom != 10)
                 {
-                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
-                    Result = translatorIntTo10.Translate();
+                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, NumberEntire);
+                    string ResultInt = translatorIntTo10.Translate();
+                    translatorFloatTo10 = new TranslatorFloatTo10(NotionFrom, NumberFractional);
+                    string ResultFloat = translatorFloatTo10.Translate();
+                    Result = (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
+
                 }
                 else if (NotionFrom != NotionTo && NotionFrom == 10 && NotionTo != 10)
                 {
-                    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, Number);
-                    Result = translatorIntFrom10.Translate();
+                    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, NumberEntire);
+                    string ResultInt = translatorIntFrom10.Translate();
+                    translatorFloatFrom10 = new TranslatorFloatFrom10(NotionTo, NumberFractional);
+                    string ResultFloat = translatorFloatFrom10.Translate();
+                    Result = (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
                 }
                 else if (NotionFrom != NotionTo && NotionTo != 10 && NotionFrom != 10)
                 {
-                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, Number);
+                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, NumberEntire);
                     string tempInt = translatorIntTo10.Translate();
                     translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, tempInt);
-                    Result = translatorIntFrom10.Translate();
+                    string ResultInt = translatorIntFrom10.Translate();
+
+                    translatorFloatTo10 = new TranslatorFloatTo10(NotionFrom, NumberFractional);
+                    string tempFloat = translatorFloatTo10.Translate();
+                    translatorFloatFrom10 = new TranslatorFloatFrom10(NotionTo, tempFloat);
+                    string ResultFloat = translatorFloatFrom10.Translate();
+
+                    Result = (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
                 }
 
                 TextBoxResult.Text = Result;
