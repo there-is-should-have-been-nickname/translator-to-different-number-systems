@@ -36,9 +36,9 @@ namespace NumberSystemsTranslator
                 string NotionToStr = ComboBoxTo.Text;
 
                 //Checking and handling errors
-                if (CheckErrors())
+                if (!string.IsNullOrWhiteSpace(GetErrorMessage()))
                 {
-                    HandleErrors();
+                    ThrowError(GetErrorMessage());
                 }
 
                 Result = Number;
@@ -76,65 +76,39 @@ namespace NumberSystemsTranslator
             }
         }
 
-
-        private bool CheckErrors()
+        private string GetErrorMessage()
         {
             if (string.IsNullOrWhiteSpace(TextBoxNumber.Text))
             {
-                return true;
+                return "Вы не ввели число";
             }
 
             if (string.IsNullOrWhiteSpace(ComboBoxFrom.Text))
             {
-                return true;
+                return "Вы не ввели систему счисления, из которой будет осуществлен перевод";
             }
 
             if (string.IsNullOrWhiteSpace(ComboBoxTo.Text))
             {
-                return true;
+                return "Вы не ввели систему счисления, в которую будет осуществлен перевод";
             }
 
             if (TextBoxNumber.Text[0] == '0')
             {
-                return true;
+                return "Число не должно начинаться с нуля";
             }
 
             if (new Regex(@"[a-z!@#№$%^&*()\-+=?<>/|\\ ]+").Matches(TextBoxNumber.Text).Count > 0)
             {
-                return true;
+                return "Число не должно содержать что-то кроме букв или цифр";
             }
 
-            return false;
+            return "";
         }
 
-        private Exception HandleErrors()
+        private static Exception ThrowError(string message)
         {
-            if (string.IsNullOrWhiteSpace(TextBoxNumber.Text))
-            {
-                throw new ArgumentNullException(paramName: "", message: "Вы не ввели число");
-            }
-
-            if (string.IsNullOrWhiteSpace(ComboBoxFrom.Text))
-            {
-                throw new ArgumentNullException(paramName: "", message: "Вы не ввели систему счисления, из которой будет осуществлен перевод");
-            }
-
-            if (string.IsNullOrWhiteSpace(ComboBoxTo.Text))
-            {
-                throw new ArgumentNullException(paramName: "", message: "Вы не ввели систему счисления, в которую будет осуществлен перевод");
-            }
-
-            if (TextBoxNumber.Text[0] == '0')
-            {
-                throw new ArgumentException(paramName: "", message: "Число не должно начинаться с нуля");
-            }
-
-            if (new Regex(@"[a-z!@#№$%^&*()\-+=?<>/|\\ ]+").Matches(TextBoxNumber.Text).Count > 0)
-            {
-                throw new ArgumentException(paramName: "", message: "Число не должно содержать что-то кроме букв или цифр");
-            }
-
-            throw new Exception(message: "Другая ошибка");
+            throw new Exception(message: message);
         }
 
         private void TextBoxNumber_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
