@@ -15,6 +15,7 @@ namespace Lib
         {
             string NewNumber = "0.";
             double _NumberFloat = Convert.ToDouble(_Number, Provider);
+            int DigitsLimit = 0;
 
             do
             {
@@ -33,7 +34,8 @@ namespace Lib
                 }
 
                 _NumberFloat -= NumberCopy;
-            } while ((_NumberFloat.ToString(Provider) != "0.000000") && (_NumberFloat > 0));
+                ++DigitsLimit;
+            } while ((_NumberFloat.ToString(Provider) != "0.000000") && (_NumberFloat > 0) && DigitsLimit <= 10);
             return NewNumber;
         }
     }

@@ -25,12 +25,14 @@ namespace NumberSystemsTranslator
         private TranslatorFloatTo10 translatorFloatTo10;
         private TranslatorFloatFrom10 translatorFloatFrom10;
 
-        private NumberFormatInfo Provider = new NumberFormatInfo();
+        private NumberFormatInfo Provider = new()
+        {
+            NumberDecimalSeparator = "."
+        };
 
         public MainWindow()
         {
             InitializeComponent();
-            Provider.NumberDecimalSeparator = ".";
         }
 
         private void ButtonCalculate_Click(object sender, RoutedEventArgs e)
@@ -52,48 +54,26 @@ namespace NumberSystemsTranslator
 
                 NotionFrom = Convert.ToInt32(NotionFromStr);
                 NotionTo = Convert.ToInt32(NotionToStr);
-                
-                NumberFractional = "0." + NumberEntire.Split(".")[1];
-                NumberEntire = NumberEntire.Split(".")[0];
-
-                
 
                 //Translating
-                if (NotionFrom != NotionTo && NotionTo == 10 && NotionFrom != 10)
+                if (NotionFrom != NotionTo)
                 {
-                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, NumberEntire);
-                    string ResultInt = translatorIntTo10.Translate();
-                    translatorFloatTo10 = new TranslatorFloatTo10(NotionFrom, NumberFractional);
-                    string ResultFloat = translatorFloatTo10.Translate();
-                    Result = (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
+                    if (IsFloat(NumberEntire))
+                    {
+                        NumberFractional = "0." + NumberEntire.Split(".")[1];
+                        NumberEntire = NumberEntire.Split(".")[0];
 
-                }
-                else if (NotionFrom != NotionTo && NotionFrom == 10 && NotionTo != 10)
-                {
-                    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, NumberEntire);
-                    string ResultInt = translatorIntFrom10.Translate();
-                    translatorFloatFrom10 = new TranslatorFloatFrom10(NotionTo, NumberFractional);
-                    string ResultFloat = translatorFloatFrom10.Translate();
-                    Result = (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
-                }
-                else if (NotionFrom != NotionTo && NotionTo != 10 && NotionFrom != 10)
-                {
-                    translatorIntTo10 = new TranslatorIntTo10(NotionFrom, NumberEntire);
-                    string tempInt = translatorIntTo10.Translate();
-                    translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, tempInt);
-                    string ResultInt = translatorIntFrom10.Translate();
-
-                    translatorFloatTo10 = new TranslatorFloatTo10(NotionFrom, NumberFractional);
-                    string tempFloat = translatorFloatTo10.Translate();
-                    translatorFloatFrom10 = new TranslatorFloatFrom10(NotionTo, tempFloat);
-                    string ResultFloat = translatorFloatFrom10.Translate();
-
-                    Result = (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
+                        string ResultInt = GetIntValue();
+                        string ResultFloat = GetFloatValue();
+                        Result = (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
+                    } else
+                    {
+                        string ResultInt = GetIntValue();
+                        Result = ResultInt;
+                    }
                 }
 
                 TextBoxResult.Text = Result;
-                //TODO: ошибка, когда в записи есть недопустимые числа
-                //TODO: ошибка, когда для дробей нельзя перевести
 
             }
             catch (Exception err)
@@ -124,6 +104,11 @@ namespace NumberSystemsTranslator
                 return "Число не должно начинаться с нуля";
             }
 
+            if (TextBoxNumber.Text[0] == '.' || TextBoxNumber.Text[^1] == '.')
+            {
+                return "Точка должна быть между цифрами. Она не может быть ни первой, ни последней";
+            }
+
             if (new Regex(@"[a-z!@#№$%^&*()\-+=?<>/|\\ ]+").Matches(TextBoxNumber.Text).Count > 0)
             {
                 return "Число не должно содержать что-то кроме букв или цифр";
@@ -135,6 +120,30 @@ namespace NumberSystemsTranslator
         private static Exception ThrowError(string message)
         {
             throw new Exception(message: message);
+        }
+
+        private static bool IsFloat(string num)
+        {
+            if (new Regex(@"\.+").Matches(num).Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private string GetIntValue() {
+            translatorIntTo10 = new TranslatorIntTo10(NotionFrom, NumberEntire);
+            string tempInt = translatorIntTo10.Translate();
+            translatorIntFrom10 = new TranslatorIntFrom10(NotionTo, tempInt);
+            return translatorIntFrom10.Translate();
+        }
+
+        private string GetFloatValue()
+        {
+            translatorFloatTo10 = new TranslatorFloatTo10(NotionFrom, NumberFractional);
+            string tempFloat = translatorFloatTo10.Translate();
+            translatorFloatFrom10 = new TranslatorFloatFrom10(NotionTo, tempFloat);
+            return translatorFloatFrom10.Translate();
         }
 
         private void TextBoxNumber_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
