@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Перевод из одной системы счисления в другую" Margin="0,30,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="25" HorizontalAlignment="Center"/>
         <Label Content="Число:" HorizontalAlignment="Left" Margin="96,104,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="200,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="200,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" TextChanged="TextBoxNumber_TextChanged"/>
         <Label Content="Из:" HorizontalAlignment="Left" Margin="96,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
         <Label Content="В:" HorizontalAlignment="Left" Margin="240,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
         <Label Content="Результат:" HorizontalAlignment="Left" Margin="96,280,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold"/>
