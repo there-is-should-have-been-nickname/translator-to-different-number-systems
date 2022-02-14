@@ -136,5 +136,14 @@ namespace NumberSystemsTranslator
 
             throw new Exception(message: "Другая ошибка");
         }
+
+        private void TextBoxNumber_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            if (new Regex(@"[А-Яа-я]+").Matches(TextBoxNumber.Text).Count > 0)
+            {
+                MessageBox.Show("Зай, ну давай хоть тут без могучего русского");
+                TextBoxNumber.Text = "";
+            }
+        }
     }
 }
