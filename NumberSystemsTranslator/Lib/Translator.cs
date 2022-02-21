@@ -11,7 +11,7 @@ namespace Lib
         private static int _NotionTo = 0;
         private static string _NumberEntire = "";
         private static string _NumberFractional = "";
-        private static NumberFormatInfo Provider= new()
+        private static readonly NumberFormatInfo Provider= new()
         {
             NumberDecimalSeparator = "."
         };

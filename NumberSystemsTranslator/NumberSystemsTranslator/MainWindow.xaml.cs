@@ -26,7 +26,7 @@ namespace NumberSystemsTranslator
                     Error.ThrowError(Error.GetErrorMessage(ComboBoxFrom.Text, ComboBoxTo.Text, TextBoxNumber.Text));
                 }
 
-                TextBoxResult.Text = Translator.Translate(Convert.ToInt32(ComboBoxFrom.Text), 
+                TextBoxResult.Content = Translator.Translate(Convert.ToInt32(ComboBoxFrom.Text), 
                     Convert.ToInt32(ComboBoxTo.Text), 
                     TextBoxNumber.Text);
 
