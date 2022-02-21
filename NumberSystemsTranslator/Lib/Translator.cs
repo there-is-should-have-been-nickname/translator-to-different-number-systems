@@ -33,12 +33,12 @@ namespace Lib
 
         private static string TranslateIntTo10()
         {
-            int NewNumber = 0;
+            ulong NewNumber = 0;
             for (int i = 0; i < _NumberEntire.Length; ++i)
             {
                 NewNumber = _NumberEntire[i] <= 57
-                    ? (NewNumber * _NotionFrom) + Convert.ToInt32(_NumberEntire[i] - '0')
-                    : (NewNumber * _NotionFrom) + Convert.ToInt32(_NumberEntire[i] - '0' - 7);
+                    ? (NewNumber * (ulong)_NotionFrom) + Convert.ToUInt64(_NumberEntire[i] - '0')
+                    : (NewNumber * (ulong)_NotionFrom) + Convert.ToUInt64(_NumberEntire[i] - '0' - 7);
             }
             return NewNumber.ToString();
         }
@@ -46,20 +46,20 @@ namespace Lib
         private static string TranslateIntFrom10()
         {
             string NewNumber = "";
-            int _NumberInt = Convert.ToInt32(_NumberEntire);
+            ulong _NumberInt = Convert.ToUInt64(_NumberEntire);
 
             do
             {
-                if (_NumberInt % _NotionTo < 10)
+                if (_NumberInt % (ulong)_NotionTo < 10)
                 {
-                    NewNumber += (_NumberInt % _NotionTo).ToString();
+                    NewNumber += (_NumberInt % (ulong)_NotionTo).ToString();
                 }
                 else
                 {
-                    NewNumber += Convert.ToChar(_NumberInt % _NotionTo + 7 + '0');
+                    NewNumber += Convert.ToChar(_NumberInt % (ulong)_NotionTo + 7 + '0');
                 }
 
-                _NumberInt /= _NotionTo;
+                _NumberInt /= (ulong)_NotionTo;
             } while (_NumberInt != 0);
 
             return new string(NewNumber.ToCharArray().Reverse().ToArray());
@@ -117,8 +117,9 @@ namespace Lib
         {
             _NotionFrom = notionFrom;
             _NotionTo = notionTo;
-            _NumberEntire = number;
+            _NumberEntire = number.ToUpper();
         }
+
         private static bool IsFloat(string num)
         {
             if (new Regex(@"\.+").Matches(num).Count > 0)
@@ -145,11 +146,11 @@ namespace Lib
         public static string Translate(int notionFrom, int notionTo, string number)
         {
             SetParamenters(notionFrom, notionTo, number);
-            if(!IsCorrectDigits())
+
+            if (!IsCorrectDigits())
             {
                 throw new Exception(message: $"Минимум дна из цифр не входит в систему счисления с основанием {notionFrom}");
             }
-
 
             if (_NotionFrom != _NotionTo)
             {
