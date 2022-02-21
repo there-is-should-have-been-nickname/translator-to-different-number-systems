@@ -160,8 +160,8 @@ namespace Lib
                     _NumberEntire = _NumberEntire.Split(".")[0];
 
                     string ResultInt = GetIntValue();
-                    string ResultFloat = GetFloatValue();
-                    return (Convert.ToDouble(ResultInt, Provider) + Convert.ToDouble(ResultFloat, Provider)).ToString(Provider);
+                    string ResultFloat = GetFloatValue().Remove(0, 1);
+                    return ResultInt + ResultFloat;
                 }
                 else
                 {

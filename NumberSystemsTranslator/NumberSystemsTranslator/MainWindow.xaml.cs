@@ -18,8 +18,8 @@ namespace NumberSystemsTranslator
 
         private void ButtonCalculate_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 //Checking and handling errors
                 if (!string.IsNullOrWhiteSpace(Error.GetErrorMessage(ComboBoxFrom.Text, ComboBoxTo.Text, TextBoxNumber.Text)))
                 {
@@ -30,11 +30,11 @@ namespace NumberSystemsTranslator
                     Convert.ToInt32(ComboBoxTo.Text), 
                     TextBoxNumber.Text);
 
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            //}
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show(err.Message);
+            //}
         }
     }
 }
