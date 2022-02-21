@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Lib
 {
@@ -36,7 +32,7 @@ namespace Lib
                 return "Точка должна быть между цифрами. Она не может быть ни первой, ни последней";
             }
 
-            if (new Regex(@"[a-z!@#№$%^&*()\-+=?<>/|\\ ]+").Matches(number).Count > 0)
+            if (new Regex(@"[!@#№$%^&*()\-+=?<>/|\\ ]+").Matches(number).Count > 0)
             {
                 return "Число не должно содержать что-то кроме букв или цифр";
             }

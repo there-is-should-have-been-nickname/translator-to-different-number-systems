@@ -117,8 +117,9 @@ namespace Lib
         {
             _NotionFrom = notionFrom;
             _NotionTo = notionTo;
-            _NumberEntire = number;
+            _NumberEntire = number.ToUpper();
         }
+
         private static bool IsFloat(string num)
         {
             if (new Regex(@"\.+").Matches(num).Count > 0)
@@ -145,11 +146,11 @@ namespace Lib
         public static string Translate(int notionFrom, int notionTo, string number)
         {
             SetParamenters(notionFrom, notionTo, number);
-            if(!IsCorrectDigits())
+
+            if (!IsCorrectDigits())
             {
                 throw new Exception(message: $"Минимум дна из цифр не входит в систему счисления с основанием {notionFrom}");
             }
-
 
             if (_NotionFrom != _NotionTo)
             {
