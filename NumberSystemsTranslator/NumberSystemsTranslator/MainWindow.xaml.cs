@@ -20,16 +20,7 @@ namespace NumberSystemsTranslator
         {
             try
             {
-                //Checking and handling errors
-                if (!string.IsNullOrWhiteSpace(Error.GetErrorMessage(ComboBoxFrom.Text, ComboBoxTo.Text, TextBoxNumber.Text)))
-                {
-                    Error.ThrowError(Error.GetErrorMessage(ComboBoxFrom.Text, ComboBoxTo.Text, TextBoxNumber.Text));
-                }
-
-                TextBoxResult.Content = Translator.Translate(Convert.ToInt32(ComboBoxFrom.Text), 
-                    Convert.ToInt32(ComboBoxTo.Text), 
-                    TextBoxNumber.Text);
-
+                TextBoxResult.Content = Translator.Translate(ComboBoxFrom.Text, ComboBoxTo.Text, TextBoxNumber.Text);
             }
             catch (Exception err)
             {
