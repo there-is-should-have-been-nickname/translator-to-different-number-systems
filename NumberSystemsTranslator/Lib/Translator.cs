@@ -143,13 +143,20 @@ namespace Lib
             return TranslateFloatFrom10();
         }
 
-        public static string Translate(int notionFrom, int notionTo, string number)
+        public static string Translate(string notionFrom, string notionTo, string number)
         {
-            SetParamenters(notionFrom, notionTo, number);
+
+            //Checking and handling errors
+            if (!string.IsNullOrWhiteSpace(Error.GetErrorMessage(notionFrom, notionTo, number)))
+            {
+                Error.ThrowError(Error.GetErrorMessage(notionFrom, notionTo, number));
+            }
+
+            SetParamenters(Convert.ToInt32(notionFrom), Convert.ToInt32(notionTo), number);
 
             if (!IsCorrectDigits())
             {
-                throw new Exception(message: $"Минимум дна из цифр не входит в систему счисления с основанием {notionFrom}");
+                throw new Exception(message: $"Минимум одна из цифр не входит в систему счисления с основанием {notionFrom}");
             }
 
             if (_NotionFrom != _NotionTo)
