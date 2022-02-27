@@ -47,8 +47,9 @@ namespace NumberSystemsTranslator
             ComboBoxTo.SetBinding(ComboBox.TextProperty, bindingTo);
             TextBoxNumber.SetBinding(TextBox.TextProperty, bindingNumber);
             LabelResult.SetBinding(ContentProperty, bindingResult);
+            
 
-            ButtonCalculate.AddHandler(Button.ClickEvent, new RoutedEventHandler(Variables.ButtonCalculateClick));
+            //ButtonCalculate.AddHandler(Button.ClickEvent, new RoutedEventHandler(Variables.ButtonCalculateClick));
 
             //CommandBinding commandBinding = new CommandBinding();
             //commandBinding.Command = ApplicationCommands.Help;

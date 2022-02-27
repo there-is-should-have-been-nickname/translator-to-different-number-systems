@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Перевод из одной системы счисления в другую" Margin="54,30,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="25" HorizontalAlignment="Left" Width="651"/>
         <Label Content="Число:" HorizontalAlignment="Left" Margin="50,104,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="68"/>
-        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="150,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" MinWidth="200"/>
+        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="150,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" MinWidth="200" MaxWidth="600"/>
         <Label Content="Из:" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="39"/>
         <Label Content="В:" HorizontalAlignment="Left" Margin="206,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="30"/>
         <Label Content="Результат:" HorizontalAlignment="Left" Margin="50,280,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="106"/>
@@ -89,7 +89,7 @@
             <ComboBoxItem HorizontalContentAlignment="Center">35</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">36</ComboBoxItem>
         </ComboBox>
-        <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="50,221,0,0" VerticalAlignment="Top" Width="163" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold"/>
+        <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="50,221,0,0" VerticalAlignment="Top" Width="163" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold" Click="ButtonCalculate_Click"/>
 
     </Grid>
 </Window>

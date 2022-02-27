@@ -39,6 +39,7 @@ namespace Lib
                 NewNumber = _NumberEntire[i] <= 57
                     ? (NewNumber * (ulong)_NotionFrom) + Convert.ToUInt64(_NumberEntire[i] - '0')
                     : (NewNumber * (ulong)_NotionFrom) + Convert.ToUInt64(_NumberEntire[i] - '0' - 7);
+
             }
             return NewNumber.ToString();
         }
@@ -118,6 +119,7 @@ namespace Lib
             _NotionFrom = notionFrom;
             _NotionTo = notionTo;
             _NumberEntire = number.ToUpper();
+
         }
 
         private static bool IsFloat(string num)
@@ -131,8 +133,21 @@ namespace Lib
 
         private static string GetIntValue()
         {
+            //Check if the number is UInt
+            if (_NotionFrom == 10)
+            {
+                ulong number = 0;
+
+                bool success = UInt64.TryParse(_NumberEntire, out number);
+                if (!success)
+                {
+                    Error.ThrowError($"Число не входит в диапазон UInt (до {UInt64.MaxValue})");
+                }
+            }
+
             string tempInt = TranslateIntTo10();
-            _NumberEntire = tempInt;
+
+           _NumberEntire = tempInt;
             return TranslateIntFrom10();
         }
 
