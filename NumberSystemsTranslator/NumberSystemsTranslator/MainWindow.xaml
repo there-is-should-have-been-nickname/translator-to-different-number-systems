@@ -3,13 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NumberSystemsTranslator" xmlns:lib="clr-namespace:Lib;assembly=Lib"
+        xmlns:local="clr-namespace:NumberSystemsTranslator"
         mc:Ignorable="d"
         Title="Перевод из одной системы счисления в другую" Height="400" Width="800" Background="#FFD9F0EF">
     <Grid>
-        <!--<Grid.Resources>
-            <lib:Variables x:Key="variables"/>
-        </Grid.Resources>-->
         <Label Content="Перевод из одной системы счисления в другую" Margin="54,30,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="25" HorizontalAlignment="Left" Width="651"/>
         <Label Content="Число:" HorizontalAlignment="Left" Margin="50,104,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="68"/>
         <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="150,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" MinWidth="200"/>
@@ -93,7 +90,6 @@
             <ComboBoxItem HorizontalContentAlignment="Center">36</ComboBoxItem>
         </ComboBox>
         <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="50,221,0,0" VerticalAlignment="Top" Width="163" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="475,118,0,0" VerticalAlignment="Top" Width="239"/>
 
     </Grid>
 </Window>
