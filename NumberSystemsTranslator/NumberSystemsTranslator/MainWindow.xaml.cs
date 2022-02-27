@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 using Lib;
 
 namespace NumberSystemsTranslator
@@ -13,40 +14,50 @@ namespace NumberSystemsTranslator
     /// </summary>
     public partial class MainWindow : Window
     {
-        Variables variables = new Variables();
+        public Variables Variables = new();
         public MainWindow()
         {
             InitializeComponent();
+            SetBinding();
+        }
 
-            variables = new Variables();
+        private void SetBinding()
+        {
             var bindingFrom = new Binding("NotionFrom")
             {
-                Source = variables
+                Source = Variables
             };
             var bindingTo = new Binding("NotionTo")
             {
-                Source = variables
+                Source = Variables
             };
             var bindingNumber = new Binding("NumberEntire")
             {
-                Source = variables
+                Source = Variables
+            };
+            var bindingResult = new Binding("Result")
+            {
+                Source = Variables,
+                Mode = BindingMode.TwoWay
             };
 
             ComboBoxFrom.SetBinding(ComboBox.TextProperty, bindingFrom);
             ComboBoxTo.SetBinding(ComboBox.TextProperty, bindingTo);
             TextBoxNumber.SetBinding(TextBox.TextProperty, bindingNumber);
+            LabelResult.SetBinding(ContentProperty, bindingResult);
+            label.SetBinding(Label.ContentProperty, bindingResult);
+
+            ButtonCalculate.AddHandler(Button.ClickEvent, new RoutedEventHandler(Variables.ButtonCalculateClick));
+
+            //CommandBinding commandBinding = new CommandBinding();
+            //commandBinding.Command = ApplicationCommands.Help;
+            //commandBinding.Executed += CommandBinding_Executed;
+            //ButtonCalculate.CommandBindings.Add(commandBinding);
         }
 
-        private void ButtonCalculate_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                TextBoxResult.Content = Translator.Translate(ComboBoxFrom.Text, ComboBoxTo.Text, TextBoxNumber.Text);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }
+        //private void CommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        //{
+        //    MessageBox.Show("Справка по приложению");
+        //}
     }
 }
