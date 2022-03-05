@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Lib;
+using System;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Input;
 
-namespace Lib
+namespace NumberSystemsTranslator.ViewModels
 {
     public class Variables : INotifyPropertyChanged
     {
@@ -27,8 +23,7 @@ namespace Lib
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
 
 
