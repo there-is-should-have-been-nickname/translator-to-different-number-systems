@@ -4,18 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NumberSystemsTranslator"
+        xmlns:viewmodels="clr-namespace:Lib;assembly=Lib"
         mc:Ignorable="d"
         Title="Перевод из одной системы счисления в другую" Height="400" Width="800" Background="#FFD9F0EF">
+
+    <Window.DataContext>
+        <viewmodels:Variables></viewmodels:Variables>
+    </Window.DataContext>
     <Grid>
         <Label Content="Перевод из одной системы счисления в другую" Margin="54,30,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="25" HorizontalAlignment="Left" Width="651"/>
         <Label Content="Число:" HorizontalAlignment="Left" Margin="50,104,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="68"/>
-        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="150,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" MinWidth="200" MaxWidth="600"/>
+        <TextBox x:Name="TextBoxNumber" HorizontalAlignment="Left" Height="29" Margin="150,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" MinWidth="200" MaxWidth="600" Text="{Binding NumberEntire}"/>
         <Label Content="Из:" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="39"/>
         <Label Content="В:" HorizontalAlignment="Left" Margin="206,160,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="30"/>
         <Label Content="Результат:" HorizontalAlignment="Left" Margin="50,280,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" FontWeight="Bold" Width="106"/>
-        <Label x:Name="LabelResult" HorizontalAlignment="Left" Height="29" Margin="180,280,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" MinWidth="200"/>
+        <Label x:Name="LabelResult" HorizontalAlignment="Left" Height="29" Margin="180,280,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontSize="16" VerticalContentAlignment="Center" MinWidth="200" Content="{Binding Result}"/>
 
-        <ComboBox x:Name="ComboBoxFrom" HorizontalAlignment="Left" Margin="109,160,0,0" VerticalAlignment="Top" Width="65" FontFamily="Consolas" FontSize="16" Height="29" ScrollViewer.CanContentScroll="True" MaxDropDownHeight="140" HorizontalContentAlignment="Center">
+        <ComboBox x:Name="ComboBoxFrom" HorizontalAlignment="Left" Margin="109,160,0,0" VerticalAlignment="Top" Width="65" FontFamily="Consolas" FontSize="16" Height="29" ScrollViewer.CanContentScroll="True" MaxDropDownHeight="140" HorizontalContentAlignment="Center" Text="{Binding NotionFrom}">
             <ComboBoxItem HorizontalContentAlignment="Center">2</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">3</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">4</ComboBoxItem>
@@ -52,7 +57,7 @@
             <ComboBoxItem HorizontalContentAlignment="Center">35</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">36</ComboBoxItem>
         </ComboBox>
-        <ComboBox x:Name="ComboBoxTo" HorizontalAlignment="Left" Margin="271,160,0,0" VerticalAlignment="Top" Width="65" FontFamily="Consolas" FontSize="16" Height="29" ScrollViewer.CanContentScroll="True" MaxDropDownHeight="140" HorizontalContentAlignment="Center">
+        <ComboBox x:Name="ComboBoxTo" HorizontalAlignment="Left" Margin="271,160,0,0" VerticalAlignment="Top" Width="65" FontFamily="Consolas" FontSize="16" Height="29" ScrollViewer.CanContentScroll="True" MaxDropDownHeight="140" HorizontalContentAlignment="Center" Text="{Binding NotionTo}">
             <ComboBoxItem HorizontalContentAlignment="Center">2</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">3</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">4</ComboBoxItem>
@@ -89,7 +94,7 @@
             <ComboBoxItem HorizontalContentAlignment="Center">35</ComboBoxItem>
             <ComboBoxItem HorizontalContentAlignment="Center">36</ComboBoxItem>
         </ComboBox>
-        <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="50,221,0,0" VerticalAlignment="Top" Width="163" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold" Click="ButtonCalculate_Click"/>
+        <Button x:Name="ButtonCalculate" Content="Посчитать" HorizontalAlignment="Left" Margin="50,221,0,0" VerticalAlignment="Top" Width="163" FontFamily="Consolas" FontSize="16" Height="29" Background="#FF39DC40" FontWeight="Bold" Command="{Binding Calculate}"/>
 
     </Grid>
 </Window>
