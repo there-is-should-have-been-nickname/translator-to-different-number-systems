@@ -9,7 +9,6 @@ C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSyst
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator_MarkupCompile.cache
-C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator_MarkupCompile.lref
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\MainWindow.baml
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator.g.resources
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator.GeneratedMSBuildEditorConfig.editorconfig
@@ -23,3 +22,5 @@ C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSyst
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\bin\Debug\net5.0-windows\Lib.dll
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\bin\Debug\net5.0-windows\Lib.pdb
 C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator.csproj.CopyComplete
+C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\ACER\Desktop\Projects\translator-to-different-number-systems\NumberSystemsTranslator\NumberSystemsTranslator\obj\Debug\net5.0-windows\NumberSystemsTranslator_MarkupCompile.lref

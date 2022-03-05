@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Lib
+namespace NumberSystemsTranslator.ViewModels
 {
     public class CalculateCommand : ICommand
     {

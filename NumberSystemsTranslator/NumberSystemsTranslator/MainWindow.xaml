@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:NumberSystemsTranslator"
-        xmlns:viewmodels="clr-namespace:Lib;assembly=Lib"
+        xmlns:viewmodels="clr-namespace:NumberSystemsTranslator.ViewModels"
         mc:Ignorable="d"
         Title="Перевод из одной системы счисления в другую" Height="400" Width="800" Background="#FFD9F0EF">
 
